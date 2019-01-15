@@ -26,6 +26,9 @@ export const BasicForm = ({onError = action('error'), onSubmit = action('submit'
           value={props.values.name}
           name="name"
         />
+        <input id="file" name="file" type="file" onChange={(event) => {
+          props.setFieldValue("file", event.currentTarget.files[0]);
+        }} />
         {props.errors.name && <div id="feedback">{props.errors.name}</div>}
         <button type="submit">Submit</button>
       </form>
