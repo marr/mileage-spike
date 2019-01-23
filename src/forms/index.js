@@ -6,8 +6,22 @@ export const BasicForm = ({onError = action('error'), onSubmit = action('submit'
   <Formik
     initialValues={{ name: 'bart' }}
     onSubmit={(values, actions) => {
-      const formData = new FormData();
-      formData.append(values.file);
+      const body = new FormData();
+      body.append('file', values.file)
+      setTimeout(() => {
+        fetch('http://localhost:8000/x308xlx3', {
+          method: 'POST',
+          body
+        });
+        if (values.name === 'homer') {
+          actions.setErrors({_main: 'something', name: 'Homer is not allowed!'})
+          onError()
+        } else {
+          alert(JSON.stringify(values, null, 2));
+          onSubmit(values);
+        }
+        actions.setSubmitting(false);
+      }, 1000);
     }}
     render={props => (
       <form onSubmit={props.handleSubmit}>
@@ -15,6 +29,7 @@ export const BasicForm = ({onError = action('error'), onSubmit = action('submit'
           props.setFieldValue("file", event.currentTarget.files[0]);
         }} />
         {props.errors.file && <div id="feedback">{props.errors.file}</div>}
+        <button type="submit">Submit</button>
       </form>
     )}
   />

@@ -1,0 +1,31 @@
+{
+    "calendarCurrencyHeader": "All prices are in USD",
+    "dailyPricingResponses": [
+        {
+            "custom": false,
+            "date": "2018-06-28",
+            "localizedDayOfWeek": "Thursday",
+            "localizedShortDayOfWeek": "Thu",
+            "price": 319,
+            "priceEditable": true,
+            "priceWithCurrency": {
+                "amount": 319,
+                "currencyCode": "USD"
+            },
+            "wholeDayUnavailable": false
+        },
+        {
+            "custom": false,
+            "date": "2018-06-29",
+            "localizedDayOfWeek": "Friday",
+            "localizedShortDayOfWeek": "Fri",
+            "price": 319,
+            "priceEditable": true,
+            "priceWithCurrency": {
+                "amount": 319,
+                "currencyCode": "USD"
+            },
+            "wholeDayUnavailable": false
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+:root {
+  --buttonBg: #fc0;
+}
+
+.button {
+  background-color: var(--buttonBg);
+}
+
+.button.custom {
+  --buttonBg: coral;
+}
