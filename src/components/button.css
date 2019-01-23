@@ -7,5 +7,5 @@
 }
 
 .button.custom {
-  --buttonBg: coral;
+  --buttonBg: var(--special);
 }

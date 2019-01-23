@@ -15,11 +15,6 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                require('postcss-custom-properties'), // eslint-disable-line
-              ],
-            }
           }
         ]
       },

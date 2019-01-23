@@ -25,10 +25,12 @@ export const BasicForm = ({onError = action('error'), onSubmit = action('submit'
     }}
     render={props => (
       <form onSubmit={props.handleSubmit}>
+        <input id="name" name="name" onChange={props.handleChange} value={props.values.name} />
+        {props.errors.name && <div className="error">{props.errors.name}</div>}
         <input id="file" name="file" type="file" onChange={(event) => {
           props.setFieldValue("file", event.currentTarget.files[0]);
         }} />
-        {props.errors.file && <div id="feedback">{props.errors.file}</div>}
+        {props.errors.file && <div className="error">{props.errors.file}</div>}
         <button type="submit">Submit</button>
       </form>
     )}
